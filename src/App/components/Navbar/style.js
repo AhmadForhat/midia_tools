@@ -1,5 +1,10 @@
 export const
     container = {
-        display: 'flex',
-        justifyContent: 'center'
+        overflow: 'hidden',
+        display:'flex',
+        flexDirection: 'column',
+        textAlign:'center',
+        position: 'fixed',
+        top: '60px',
+        width: '20%'
     }
