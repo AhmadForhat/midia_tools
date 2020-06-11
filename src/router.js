@@ -8,6 +8,9 @@ import {
 import Home from './App/pages/Home/index'
 import About from './App/pages/About/index'
 import Users from './App/pages/Users/index'
+import Login from './App/pages/Login/index'
+import Cadastrar from './App/pages/Cadastrar'
+import NotFound from './App/pages/NotFound'
 import Navbar from './App/components/Navbar'
 
 
@@ -15,19 +18,27 @@ export default function App() {
   return (
     <Router>
       <>
-        <Navbar />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
+          <Route exact path="/">
+              <Navbar title={'Home'}/><Home />
           </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/about">
+              <Navbar title={'About'}/><About />
+            </Route>
+            <Route path="/users">
+              <Navbar title={'Users'}/><Users />
+            </Route>
+            <Route path="/cadastrar">
+              <Cadastrar />
+            </Route>
+            <Route path="*">
+              <NotFound />
+            </Route>
         </Switch>
         </>
     </Router>
