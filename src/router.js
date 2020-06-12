@@ -13,8 +13,23 @@ import Cadastrar from './App/pages/Cadastrar'
 import NotFound from './App/pages/NotFound'
 import Navbar from './App/components/Navbar'
 
+const isLogged = false
 
 export default function App() {
+  if(isLogged) return (
+    <Router>
+      <>
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route exact path="/">
+              <h1>Logou!!!</h1>
+          </Route>
+        </Switch>
+        </>
+    </Router>
+  )
+  
   return (
     <Router>
       <>
@@ -22,7 +37,7 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/">
-              <Navbar title={'Home'}/><Home />
+              <Navbar title={'Home'}></Navbar><Home />
           </Route>
           <Route path="/login">
               <Login />
