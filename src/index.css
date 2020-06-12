@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@keyframes spinner {
+  0% {
+      transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  100% {
+       transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+
+.spinner {
+  height: 100vh;  
+  position: relative;
+}
+
+.spinner::before {
+  animation: 1s linear infinite spinner;
+  border: solid 3px #eee;
+  border-bottom-color:black;
+  border-radius: 50%;
+  content: "";
+  height: 40px;
+  left: 50%;
+  opacity: inherit;
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0);
+  transform-origin: center;
+  width: 40px;
+  will-change: transform;
+}
