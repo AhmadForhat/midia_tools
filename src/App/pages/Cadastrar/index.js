@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Button from '../../components/Button'
 import Input from '../../components/Input'
-import {container} from './style'
 import { useLocation } from 'wouter'
 import sendToBackend from './sendToBackend'
 import { Link } from "react-router-dom";
@@ -20,7 +19,7 @@ function Login() {
     return (
       <div style={{diplay:'flex'}}>
         <div style={{display:'flex', justifyContent:'center'}}>
-        <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQGRxV3kpBUxQw/company-logo_100_100/0?e=1599091200&v=beta&t=lVCgFYTImDC2dNDTdBSV-tpzfcWCkLKlgVrBYr0heJs"/>
+        <img alt ="logo da empresa" src="https://media-exp1.licdn.com/dms/image/C4E0BAQGRxV3kpBUxQw/company-logo_100_100/0?e=1599091200&v=beta&t=lVCgFYTImDC2dNDTdBSV-tpzfcWCkLKlgVrBYr0heJs"/>
         </div>  
         <Input title={'CNPJ'} type={'text'} placeholder={'123-4567/88'} valor={cnpj} setValor={setCnpj}/>
         <Input title={'GitHub User'} type={'text'} placeholder={'MidiaTools'} valor={userGit} setValor={setUsergit}/>
