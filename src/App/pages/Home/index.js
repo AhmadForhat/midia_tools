@@ -5,6 +5,9 @@ import Footer from '../../components/Footer'
 import Card from '../../components/Card'
 import Devs from '../../components/Devs'
 import Contato from '../../components/Contato'
+import servicoImg from './image/imgServico.png'
+import missoesImg from './image/imgMissoes.png'
+import equipeImg from './image/imgEquipe.png'
 
 function Home() {
   const [user, setUser] = useState('')
@@ -12,9 +15,9 @@ function Home() {
   const state = {user, info, setUser, setInfo}
     useEffect(() => fetch(state), [state])
     const table = [
-    <Card title='Serviços' img='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' texto='Criamos soluções para a sua empresa, com foco em facilitar e dinamizar suas redes sociais.' />,
-    <Card title='Missões' img='https://images.unsplash.com/photo-1543286386-2e659306cd6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' texto='Criamos soluções para a sua empresa, com foco em facilitar e dinamizar suas redes sociais.' />,
-    <Card title='Equipe' img='https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' texto='Criamos soluções para a sua empresa, com foco em facilitar e dinamizar suas redes sociais.' />
+    <Card title='Serviços' img={servicoImg} texto='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' />,
+    <Card title='Missões' img={missoesImg} texto='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' />,
+    <Card title='Equipe' img={equipeImg} texto='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' />
   ]
     const arrayDevs = [
       {
