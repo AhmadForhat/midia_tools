@@ -5,6 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #F7F7F7;
+}
+
+h2{
+  color:rgb(55, 28, 133)
+}
+
+p{
+  color:#11023C
+}
+
+footer p{
+  color:white
 }
 
 code {
