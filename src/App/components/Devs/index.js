@@ -8,10 +8,11 @@ function Devs({arrayDevs}) {
           {arrayDevs.map(dev => {
             return (
               <>
-              <div style={{display:'flex', flexDirection:'column', textAlign:'center', justifyContent:'center', marginLeft:'20px', marginRight:'20px'}}>
+              <div style={{backgroundColor:'white',display:'flex', borderRadius: '5px', flexDirection:'column', textAlign:'center', justifyContent:'center', marginLeft:'20px', marginRight:'20px', boxShadow:'0 2px 4px 1px #B3B3B3', width:'150px', padding:'2%', marginTop:'40px'}}>
                 <img style={{borderRadius:'400px', width:'120px', alignSelf:'center'}} alt={`imagem do ${dev.name}`} src={dev.urlImg}/>
                 <div style={{marginTop:'20px'}}>
                 <a target ="blank" href = {dev.urlGit}>{dev.nome}</a>
+                <p>{dev.info}</p>
                 </div>
               </div>
               </>
