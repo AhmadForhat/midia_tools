@@ -42,12 +42,12 @@ export default function App() {
           <Route path="/login">
               <Login />
             </Route>
-            <Route path="/about">
+            {/* <Route path="/about">
               <Navbar title={'About'}/><About />
             </Route>
             <Route path="/users">
               <Navbar title={'Users'}/><Users />
-            </Route>
+            </Route> */}
             <Route path="/cadastrar">
               <Cadastrar />
             </Route>
