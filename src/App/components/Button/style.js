@@ -24,4 +24,16 @@ export const
         textDecoration:'none',
         outline: 'none',
         border:'none'
+    },
+    butaoSmall = {
+        marginTop:'35px',
+        padding:'10px 0 10px 0',
+        borderRadius:'5px',
+        width:'30%',
+        alignSelf:'center',
+        backgroundColor:'#170649',
+        color:'white',
+        textDecoration:'none',
+        outline: 'none',
+        border:'none'
     }
