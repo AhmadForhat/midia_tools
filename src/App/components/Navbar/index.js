@@ -22,8 +22,6 @@ function Navbar({title}) {
                                 <img src={homeIcon} style={{marginRight:'20px'}} alt="home icon" />
                                 <Link style={linkStyle} to="/">Home</Link>
                                 </div>
-                                {/* <Link style={linkStyle} to="/about">About</Link>
-                                <Link style={linkStyle} to="/users">Users</Link> */}
                                 <div style={{margin:'0 auto', display:'flex', justifyContent:'center', marginTop:'60px'}}>
                                 <img src={loginIcon} style={{marginRight:'20px'}} alt="home icon" />
                                 <Link style={linkStyle} to="/login">Login</Link>
