@@ -2,40 +2,9 @@ import React from 'react'
 import { Chart } from 'react-charts'
 
 function Dashboard() {
-    const data = React.useMemo(
-    () => [
-      {
-        label: 'Geral',
-        data: [['public_repos', 17], ['public_gists', 0], ['followers', 4], ['following', 5]]
-      }
-    ],
-    []
-  )
-  const series = React.useMemo(
-    () => ({
-      type: 'bar'
-    }),
-    []
-  )
-  const axes = React.useMemo(
-    () => [
-      { primary: true, type: 'ordinal', position: 'left' },
-      { position: 'bottom', type: 'linear', stacked: true }
-    ],
-    []
-  )
-  const getSeriesStyle = React.useCallback(
-    () => ({
-      transition: 'all .5s ease'
-    }),
-    []
-  )
-  const getDatumStyle = React.useCallback(
-    () => ({
-      transition: 'all .5s ease'
-    }),
-    []
-  )
+  useContext(userContext).nome = "mayara"
+  const {nome} = useContext(userContext)
+  console.log(nome)
     return (
       <>
         <h1>Batata</h1>
