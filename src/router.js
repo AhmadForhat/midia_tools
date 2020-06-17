@@ -6,48 +6,44 @@ import {
 } from "react-router-dom";
 
 import Home from './App/pages/Home/index'
-import About from './App/pages/About/index'
-import Users from './App/pages/Users/index'
 import Login from './App/pages/Login/index'
 import Cadastrar from './App/pages/Cadastrar'
 import NotFound from './App/pages/NotFound'
+import Dashboard from './App/pages/Dashboard'
 import Navbar from './App/components/Navbar'
+import NavbarLogin from './App/components/NavbarLogin'
 
-const isLogged = false
-
+const isLogged = true
 export default function App() {
-  if(isLogged) return (
-    <Router>
-      <>
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route exact path="/">
-              <h1>Logou!!!</h1>
-          </Route>
-        </Switch>
-        </>
-    </Router>
-  )
+  if(isLogged){
+    const perfilImagem = 'https://avatars3.githubusercontent.com/u/54677103?s=400&u=b6e4e11c6718162d380a34d127626d0ce775414a&v=4'
+    const nome = 'AhmadForhat'
+      return (
+      <Router>
+        <>
+          <Switch>
+            <Route exact path="/">
+            <NavbarLogin title={'Dashboard'} perfilImg={perfilImagem} name={nome} /><Dashboard/>
+            </Route>
+            <Route path="*">
+              <NotFound />
+            </Route>
+          </Switch>
+          </>
+      </Router>
+    )
+  }
   
   return (
     <Router>
       <>
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/">
-              <Navbar title={'Home'}></Navbar><Home />
+              <Navbar title={'Home'} /><Home />
           </Route>
           <Route path="/login">
               <Login />
             </Route>
-            {/* <Route path="/about">
-              <Navbar title={'About'}/><About />
-            </Route>
-            <Route path="/users">
-              <Navbar title={'Users'}/><Users />
-            </Route> */}
             <Route path="/cadastrar">
               <Cadastrar />
             </Route>
