@@ -8,10 +8,10 @@ function Dashboard() {
     return (
       <>
         <h1>Batata</h1>
-        <div style={{width: '500px',height: '300px'}}>
-        <Chart data={data} series={series} axes={axes} getSeriesStyle={getSeriesStyle}
-          getDatumStyle={getDatumStyle} />
-        </div>
+        <Grafico dados={array} />
+        <Grafico dados={[['public_repos', 17], ['public_gists', 0], ['followers', 4], ['following', 5]]} />
+        <Grafico dados={[['public_repos', 17], ['public_gists', 0], ['followers', 4], ['following', 5]]} />
+        <Grafico dados={[['public_repos', 17], ['public_gists', 0], ['followers', 4], ['following', 5]]} />
       </>
     )
   }
