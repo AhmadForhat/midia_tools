@@ -1,7 +1,5 @@
 import React ,{useState} from "react";
-import {
-    Link
-  } from "react-router-dom";
+import {Link} from "react-router-dom";
 import {container, linkStyle} from './style'
 import exitIcon from './image/clear-24px.svg'
 import homeIcon from './image/home-24px.svg'
@@ -26,7 +24,7 @@ function Navbar({title, perfilImg, name}) {
                                 </div>
                                 <div style={{margin:'0 auto', display:'flex', justifyContent:'center', marginTop:'60px'}}>
                                 <img src={loginIcon} style={{marginRight:'20px'}} alt="home icon" />
-                                <Link style={linkStyle} to="/logout">Logout</Link>
+                                <Link style={linkStyle} to="/" onClick={() => localStorage.removeItem('isLogged')}>Logout</Link>
                                 </div>
                             </div>
                     </nav>

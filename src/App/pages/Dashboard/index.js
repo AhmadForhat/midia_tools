@@ -7,6 +7,7 @@ import Grafico from '../../components/Grafico'
 import InfoRepo from '../../components/InfoRepo'
 import Spinner from '../../components/Spinner'
 import Error from '../../components/Error'
+import Footer from '../../components/Footer'
 
 
 function Dashboard() {
@@ -22,11 +23,11 @@ function Dashboard() {
   const [error, setError] = useState(false)
   const [data, setData] = useState('')
   const state = {data, array, repos, loading, error,reposFilter,filterRepo, setData, setArray, setRepos, setLoading, setError,setReposFilter}
-
   useEffect(() => fetch(state),[])
     if(loading) return <Spinner />
     if(error) return <Error />
     const dataRepo = reposFilter[0] ? reposFilter : repos
+    console.log(dataRepo)
     return (
       <>
         <Grafico dados={array} />
@@ -34,12 +35,12 @@ function Dashboard() {
           <Input title={'Busca'} type={'text'} placeholder={'seu_repo'} valor={filterRepo} setValor={setFilterRepo}/>
           <Button texto={'Buscar'} click={sendToBackend(state)}/>
         </div>
-        <box style = {{display: 'flex', width: '95%', flexWrap: 'wrap', margin: '0 auto'}}>
+        <box style = {{display: 'flex', width: '95%', flexWrap: 'wrap', margin: '0 auto', marginBottom:'80px'}}>
           {
             dataRepo.map(repo => <InfoRepo data={repo}/>)
           }
         </box>
-        
+        <Footer />
       </>
     )
   }

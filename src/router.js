@@ -13,7 +13,7 @@ import Dashboard from './App/pages/Dashboard'
 import Navbar from './App/components/Navbar'
 import NavbarLogin from './App/components/NavbarLogin'
 
-const isLogged = true
+const isLogged = localStorage.getItem('isLogged')
 export default function App() {
   if(isLogged){
     const perfilImagem = 'https://avatars3.githubusercontent.com/u/54677103?s=400&u=b6e4e11c6718162d380a34d127626d0ce775414a&v=4'

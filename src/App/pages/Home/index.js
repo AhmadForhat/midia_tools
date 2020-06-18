@@ -45,9 +45,9 @@ function Home() {
         info:'Desenvolvedor FullStack'
       },
       {
-        nome:'AhmadForhat',
-        urlImg:'https://avatars3.githubusercontent.com/u/54677103?s=400&u=b6e4e11c6718162d380a34d127626d0ce775414a&v=4',
-        urlGit:'https://github.com/AhmadForhat',
+        nome:'lauracintra',
+        urlImg:'https://avatars0.githubusercontent.com/u/47889911?s=400&v=4',
+        urlGit:'https://github.com/lauracintra',
         info:'Desenvolvedor FullStack'
       }
     ]

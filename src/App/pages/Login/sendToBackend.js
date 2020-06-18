@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const sendToBackend = (state) => async () => {
-    const {login, senha, setError} = state
+    const {login, senha, setError, setLocation} = state
     const config = {
         method:'GET',
         url:'http://localhost:9000/login',
@@ -12,7 +12,13 @@ const sendToBackend = (state) => async () => {
     }
     try {
         const logou = await axios(config)
-        logou.status === 201 ? console.log('Logou com sucesso') : console.log('Não Encontramos seu usuário')
+        if(logou.status === 201 ){
+            console.log('Logou com sucesso!!')
+            localStorage.setItem('isLogged', true)
+            await setLocation('/')
+        }else{
+            console.log('Não Encontramos seu usuário')
+        }
     } catch (error) {
         console.log("Não encontramos sua senha")
         setError(true)
