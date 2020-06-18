@@ -8,10 +8,10 @@ function Grafico({dados}) {
     const axes =[{ primary: true, type: 'ordinal', position: 'left' },{ position: 'bottom', type: 'linear', stacked: true }]
     
      return(
-         <>
-        <div style={{width: '500px',height: '300px'}}>
-        <Chart data={data} series={series} axes={axes} />
-        </div>
+        <>
+          <div style={{width: '85%',height: '350px', margin: '0 auto', marginBottom: '40px'}}>
+            <Chart data={data} series={series} axes={axes} />
+          </div>
         </>
      )
   }
