@@ -15,18 +15,12 @@ function Dashboard() {
   const state = {data, array, setData, setArray}
   
   useEffect(() => fetch(state),[state])
-
-  
-
   console.log(data.public_repos)
     
     return (
       <>
-        <h1>Batata</h1>
+        <h2>Batata</h2>
         <Grafico dados={array} />
-        <Grafico dados={[['public_repos', 17], ['public_gists', 0], ['followers', 4], ['following', 5]]} />
-        <Grafico dados={[['public_repos', 17], ['public_gists', 0], ['followers', 4], ['following', 5]]} />
-        <Grafico dados={[['public_repos', 17], ['public_gists', 0], ['followers', 4], ['following', 5]]} />
       </>
     )
   }
