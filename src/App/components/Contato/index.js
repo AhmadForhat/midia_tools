@@ -1,10 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import {mapa} from './style'
+import Button from '../../components/Button'
+import Input from '../../components/Input'
+import Spinner from '../../components/Spinner'
+import sendToBackend from './sendToBackend'
 import facebook from './image/facebook.svg'
 import instagram from './image/instagram.svg'
 import linkedin from './image/linkedin.svg'
 
 function Contato() {
+    const [email, setEmail] = useState('')
+    const [news, setNews] = useState(false)
+    const [errorNews, setErrorNews] = useState(false)
+    const [loading, setLoading] = useState(false)    
+    const state = {email, news, errorNews, loading, setEmail, setNews, setErrorNews, setLoading}
     return (
         <>
             <h2 style={{marginLeft:'20px', marginBottom:'50px'}}>Contato</h2>
@@ -19,6 +28,18 @@ function Contato() {
                     <a href="https://www.facebook.com/" target='blank'><img alt="logo facebook" src={facebook} style={{width:'80px', borderRadius:'400px'}}/></a>
                     <a href="https://www.instagram.com/" target='blank'><img alt="logo instagram" src={instagram}  style={{width:'80px', borderRadius:'400px'}}/></a>
                     <a href="https://www.linkedin.com/" target='blank'><img alt="logo linkedin" src={linkedin} style={{width:'80px', borderRadius:'400px'}} /></a>
+                    <div>                                                
+                    <Input title={'Quer ficar por dentro das nossas novidades? Cadastre-se na nossa Newsletter:'} type={'email'} placeholder={'digite seu email aqui'} valor={email} setValor={setEmail}/>
+                    {!news && !loading && <Button click={sendToBackend(state)} value="click" texto = {'Cadastrar'}/>} 
+                    {news && !errorNews && !loading && <h2>Enviado!</h2>}
+                    {errorNews && !loading &&(
+                    <>
+                    <Button click={sendToBackend(state)} value="click" texto = {'Cadastrar'}/> <h2>Não deu certo!</h2>
+                    </>
+                    )
+                    }
+                    {loading && <Spinner />}
+                    </div>
                 </redes>
                 </informacoes>
             </body>
