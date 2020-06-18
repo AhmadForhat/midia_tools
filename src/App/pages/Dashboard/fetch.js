@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-const fetch = (state) => {
+const fetch = (state, filterRepo) => {
   const source = axios.CancelToken.source()    
   const run = async () => {        
         const config = {
@@ -1651,17 +1651,7 @@ const fetch = (state) => {
                   "default_branch": "master"
                 }
               ]}
-              const reposOrdered = resultRepo.data.sort(function (a, b) {
-                if (new Date(a.update_at) > new Date(b.update_at)) {
-                  return 1;
-                }
-                if (new Date(a.update_at) < new Date(b.update_at)) {
-                  return -1;
-                }
-                return 0;
-              })
-              console.log(reposOrdered)
-            await state.setRepos(reposOrdered)
+            await state.setRepos(resultRepo.data)
             await state.setData(result.data)
             await state.setArray([['public_repos', result.data.public_repos], ['public_gists', result.data.public_gists], ['followers', result.data.followers], ['following', result.data.following]])
             await state.setLoading(false)
