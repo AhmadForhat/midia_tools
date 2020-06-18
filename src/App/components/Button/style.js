@@ -13,6 +13,7 @@ export const
         border:'none'
     },
     butaoClick = {
+        margin:'0 auto',
         marginTop:'35px',
         padding:'10px 0 10px 0',
         borderRadius:'5px',
@@ -23,13 +24,13 @@ export const
         color:'white',
         textDecoration:'none',
         outline: 'none',
-        border:'none'
+        border:'none',
     },
     butaoSmall = {
         marginTop:'35px',
         padding:'10px 0 10px 0',
         borderRadius:'5px',
-        width:'30%',
+        width:'50%',
         alignSelf:'center',
         backgroundColor:'#170649',
         color:'white',

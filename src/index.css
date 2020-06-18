@@ -40,14 +40,14 @@ code {
 }
 
 .spinner {
-  height: 100vh;  
   position: relative;
+  margin:0 auto
 }
 
 .spinner::before {
   animation: 1s linear infinite spinner;
   border: solid 3px #eee;
-  border-bottom-color:black;
+  border-bottom-color:rgb(255, 0, 157);
   border-radius: 50%;
   content: "";
   height: 40px;
