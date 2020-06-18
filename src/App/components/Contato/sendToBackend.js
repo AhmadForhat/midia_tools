@@ -12,14 +12,13 @@ const sendToBackend = (state) => async () => {
     console.log(config.data)
     try {
         await setLoading(true)
-        const cadastrar = await axios(config)
-        console.log(cadastrar)        
-        setNews(true)
+        await axios(config)      
+        await setNews(true)
         await setLoading(false)        
     } catch (error) {        
         console.log(error)
-        setNews(false)
-        setErrorNews(true)
+        await setNews(false)
+        await setErrorNews(true)
         await setLoading(false)
     }
 }
