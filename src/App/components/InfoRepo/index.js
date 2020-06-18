@@ -4,13 +4,13 @@ import moment from "moment"
 import 'moment/locale/pt-br'
 
 function InfoRepo({data}) {
-    const {name, owner, forks, created_at:dateCreated, update_at:lastUpdated, language, html_url:urlRepo} = data 
+    const {name, owner, forks, created_at, updated_at, language, html_url} = data
     const urlDeploy = 'www.google.com'
     const commits = '30'
     return(
          <>
-         <body style={{width: '20%', minWidth: '300px', display: 'flex', flexDirection: 'column', padding: '20px', backgroundColor: 'white', boxShadow:'0 2px 4px 1px #B3B3B3', margin: '10px auto'}}>
-         <a href={urlRepo} target= 'blank' ><h2 style={{textAlign: 'center'}}>{name} </h2></a>
+         <body style={{width: '20%', minWidth: '250px', display: 'flex', flexDirection: 'column', padding: '20px', backgroundColor: 'white', boxShadow:'0 2px 4px 1px #B3B3B3', margin: '10px auto'}}>
+         <a href={html_url} target= 'blank' ><h2 style={{textAlign: 'center'}}>{name} </h2></a>
             <div style={{display: 'flex' }}>
                 <info>
                     <p>
@@ -23,10 +23,10 @@ function InfoRepo({data}) {
                         {`Commits: ${commits}`}
                     </p>
                     <p>
-                        {`Data de criação: ${moment(dateCreated).format('DD/MMM/YY')}`}
+                        {`Criado: ${moment(created_at).format('DD/MMM/YY')}`}
                     </p>
                     <p>
-                        {`Última atualização: ${moment(lastUpdated).format('DD/MMM/YY')}`}
+                        {`Atualizado: ${moment(updated_at).format('DD/MMM/YY')}`}
                     </p>
                 </info>
                 <relatorio style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', margin: '0 auto'}}>
