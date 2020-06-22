@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -13,17 +14,17 @@ import Dashboard from './App/pages/Dashboard'
 import Navbar from './App/components/Navbar'
 import NavbarLogin from './App/components/NavbarLogin'
 
-const isLogged = localStorage.getItem('isLogged')
+
+
 export default function App() {
+  const isLogged = localStorage.getItem('isLogged');
   if(isLogged){
-    const perfilImagem = 'https://avatars3.githubusercontent.com/u/54677103?s=400&u=b6e4e11c6718162d380a34d127626d0ce775414a&v=4'
-    const nome = 'AhmadForhat'
       return (
       <Router>
         <>
           <Switch>
             <Route exact path="/">
-            <NavbarLogin title={'Dashboard'} perfilImg={perfilImagem} name={nome} /><Dashboard/>
+            <NavbarLogin title={'Dashboard'} /><Dashboard/>
             </Route>
             <Route path="*">
               <NotFound />
@@ -42,10 +43,13 @@ export default function App() {
               <Navbar title={'Home'} /><Home />
           </Route>
           <Route path="/login">
-              <Login />
+            <Login />
             </Route>
             <Route path="/cadastrar">
               <Cadastrar />
+            </Route>
+            <Route path="/logado">
+              <NotFound />
             </Route>
             <Route path="*">
               <NotFound />
