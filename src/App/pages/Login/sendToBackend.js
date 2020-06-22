@@ -29,11 +29,6 @@ const sendToBackend = (state) => async () => {
         }
     } catch (error) {
         await setIsLoad(true)
-        console.log("Não encontramos sua senha")
-        localStorage.setItem('isLogged', true)
-        localStorage.setItem('gitUser', login)
-        const userInfo = await axios(configUserInfo)
-        localStorage.setItem('gitUserAvatar', userInfo.data.avatar_url)
         await setIsLoad(false)
     }
 }
