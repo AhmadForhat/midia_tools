@@ -2,9 +2,11 @@ import axios from 'axios'
 
 const sendToBackend = (state) => async () => {
     const {login, senha, setIsLoad} = state
-    const configUserInfo = {
-        method: 'GET',
-        url: `https://api.github.com/users/${login}`,
+    const configUserInfo = (gitUser) => {
+        return {
+            method: 'GET',
+            url: `https://api.github.com/users/${gitUser}`
+        }
     }
     const config = {
         method:'GET',
@@ -17,11 +19,12 @@ const sendToBackend = (state) => async () => {
     try {
         const logou = await axios(config)
         if(logou.status === 201 ){
+            console.log(logou)
             await setIsLoad(true)
             console.log('Logou com sucesso!!')
             localStorage.setItem('isLogged', true)
-            localStorage.setItem('gitUser', login)
-            const userInfo = await axios(configUserInfo)
+            localStorage.setItem('gitUser', logou.data.userGithub)
+            const userInfo = await axios(configUserInfo(logou.data.userGithub))
             localStorage.setItem('gitUserAvatar', userInfo.data.avatar_url)
             await setIsLoad(false)
         }else{

@@ -5,17 +5,20 @@ import { useLocation } from 'wouter'
 import sendToBackend from './sendToBackend'
 import { Link } from "react-router-dom";
 import Error from '../../components/Error'
+import Cadastrado from '../../components/Cadastrado'
 
 function Login() {
   const [senha, setSenha] = useState("");
   const [cnpj, setCnpj] = useState("");
   const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
+  const [cadastrado, setCadastrado] = useState(false);
   const [, setLocation] = useLocation("");
   const [userGit, setUsergit] = useState("");
-  const state = {senha, cnpj, email, userGit, setLocation, setError}
+  const state = {senha, cnpj, email, userGit, setLocation, setError, setCadastrado}
 
   if(error) return <Error />
+  if(cadastrado) return <Cadastrado />
     return (
       <div style={{diplay:'flex', width:'30%', minWidth:'250px', margin:'0 auto', boxShadow:'0 2px 4px 1px #B3B3B3', padding:'40px', marginTop:'20px'}}>
         <div style={{display:'flex', justifyContent:'center'}}>

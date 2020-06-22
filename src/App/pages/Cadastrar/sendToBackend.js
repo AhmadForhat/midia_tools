@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const sendToBackend = (state) => async () => {
-    const {senha, cnpj, email, userGit, setError, setLocation} = state
+    const {senha, cnpj, email, userGit, setError, setLocation, setCadastrado} = state
     const config = {
         method:'POST',
         url:'http://localhost:9000/cadastro',
@@ -17,6 +17,7 @@ const sendToBackend = (state) => async () => {
         const criarConta = await axios(config)
         console.log(criarConta)
         await setLocation('/login')
+        await setCadastrado(true)
     } catch (error) {
         setError(true)
         console.log(error)

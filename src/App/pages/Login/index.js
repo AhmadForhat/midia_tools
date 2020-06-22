@@ -24,7 +24,7 @@ if(error) return <Error />
         <div style={{display:'flex', justifyContent:'center'}}>
         <img alt ="logo da empresa" src="https://media-exp1.licdn.com/dms/image/C4E0BAQGRxV3kpBUxQw/company-logo_100_100/0?e=1599091200&v=beta&t=lVCgFYTImDC2dNDTdBSV-tpzfcWCkLKlgVrBYr0heJs"/>
         </div>
-        <Input title={'GitHub User'} type={'text'} placeholder={'midiaTools'} valor={login} setValor={setLogin}/>
+        <Input title={'Email'} type={'text'} placeholder={'midia.tools@gmail.com'} valor={login} setValor={setLogin}/>
         <Input title={'Senha'} type={'password'} placeholder={'**********'} valor={senha} setValor={setSenha}/>
         {!isLoad ? 
         (
