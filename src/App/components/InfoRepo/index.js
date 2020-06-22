@@ -1,9 +1,11 @@
 import React from "react";
 import Button from "../Button";
 import moment from "moment"
+import {useLocation} from 'wouter'
 import 'moment/locale/pt-br'
 
 function InfoRepo({data}) {
+    const [, setLocation] = useLocation("");
     const {name, owner, forks, created_at, updated_at, language, html_url} = data
     const urlDeploy = 'www.google.com'
     const commits = '30'
@@ -36,7 +38,7 @@ function InfoRepo({data}) {
                 </relatorio>
             </div>
             <div style={{ margin: '0 auto', width: '100%',  textAlign: 'center'}}>
-                <Button small='true' texto='Saiba Mais' click={ () => console.log("Clicou")} />
+                <a href={`/${name}`}><Button small='true' href={`/${name}`} texto='Saiba Mais' click={ () => setLocation(name)} /></a>
             </div>
          </body>
 

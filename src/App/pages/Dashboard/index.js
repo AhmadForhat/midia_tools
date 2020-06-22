@@ -1,4 +1,5 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
+import {useRouteMatch} from "react-router-dom";
 import sendToBackend from './sendToBackend.js'
 import fetch from './fetch'
 import Input from '../../components/Input'
@@ -8,10 +9,12 @@ import InfoRepo from '../../components/InfoRepo'
 import Spinner from '../../components/Spinner'
 import Error from '../../components/Error'
 import Footer from '../../components/Footer'
+import RepoDetails from '../RepoDetails'
+import NavbarLogin from '../../components/NavbarLogin'
 
 
 function Dashboard() {
-
+  const { url } = useRouteMatch();
   const [graphicParms, setGraphicParms] = useState([])
   const [repos, setRepos] = useState([])
   const [reposFilter, setReposFilter] = useState([])
@@ -21,12 +24,13 @@ function Dashboard() {
   const [data, setData] = useState('')
   const state = {data, graphicParms, repos, loading, error,reposFilter,filterRepo, setData, setGraphicParms, setRepos, setLoading, setError,setReposFilter}
   useEffect(() => fetch(state),[])
+    if(url !== '/') return <RepoDetails repo={url}/>
     if(loading) return <Spinner />
     if(error) return <Error />
     const dataRepo = reposFilter[0] ? reposFilter : repos
-    console.log(dataRepo)
     return (
       <>
+        <NavbarLogin title={'Dashboard'} />
         <Grafico dados={graphicParms} />
         <div style={{width:'50%', margin:'0 auto', marginBottom:'40px', minWidth:'300px'}}>
           <Input title={'Busca'} type={'text'} placeholder={'seu_repo'} valor={filterRepo} setValor={setFilterRepo}/>

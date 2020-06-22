@@ -3,7 +3,7 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
+  Route
 } from "react-router-dom";
 
 import Home from './App/pages/Home/index'
@@ -23,8 +23,8 @@ export default function App() {
       <Router>
         <>
           <Switch>
-            <Route exact path="/">
-            <NavbarLogin title={'Dashboard'} /><Dashboard/>
+            <Route exact path="/:repo?">
+            <Dashboard/>
             </Route>
             <Route path="*">
               <NotFound />

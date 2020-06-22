@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-const fetch = (state, filterRepo) => {
+const fetch = (state) => {
   const userName = localStorage.getItem('gitUser')
   const source = axios.CancelToken.source()    
   const run = async () => {        
