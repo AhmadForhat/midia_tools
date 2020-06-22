@@ -11,18 +11,15 @@ import Footer from '../../components/Footer'
 
 
 function Dashboard() {
-  
-  // useContext(userContext).nome = "mayara"
-  // const {nome} = useContext(userContext)
 
-  const [array, setArray] = useState([])
+  const [graphicParms, setGraphicParms] = useState([])
   const [repos, setRepos] = useState([])
   const [reposFilter, setReposFilter] = useState([])
   const [filterRepo, setFilterRepo] = useState('')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
   const [data, setData] = useState('')
-  const state = {data, array, repos, loading, error,reposFilter,filterRepo, setData, setArray, setRepos, setLoading, setError,setReposFilter}
+  const state = {data, graphicParms, repos, loading, error,reposFilter,filterRepo, setData, setGraphicParms, setRepos, setLoading, setError,setReposFilter}
   useEffect(() => fetch(state),[])
     if(loading) return <Spinner />
     if(error) return <Error />
@@ -30,7 +27,7 @@ function Dashboard() {
     console.log(dataRepo)
     return (
       <>
-        <Grafico dados={array} />
+        <Grafico dados={graphicParms} />
         <div style={{width:'50%', margin:'0 auto', marginBottom:'40px', minWidth:'300px'}}>
           <Input title={'Busca'} type={'text'} placeholder={'seu_repo'} valor={filterRepo} setValor={setFilterRepo}/>
           <Button texto={'Buscar'} click={sendToBackend(state)}/>

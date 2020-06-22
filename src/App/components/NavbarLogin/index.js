@@ -5,8 +5,10 @@ import exitIcon from './image/clear-24px.svg'
 import homeIcon from './image/home-24px.svg'
 import loginIcon from './image/login-24px.svg'
 
-function Navbar({title, perfilImg, name}) {
+function Navbar({title}) {
     const [hamburger, setHamburger] = useState('false')
+    const perfilImg = localStorage.getItem('gitUserAvatar')
+    const name = localStorage.getItem('gitUser')
     return (
         <>
                 {hamburger &&
@@ -24,7 +26,7 @@ function Navbar({title, perfilImg, name}) {
                                 </div>
                                 <div style={{margin:'0 auto', display:'flex', justifyContent:'center', marginTop:'60px'}}>
                                 <img src={loginIcon} style={{marginRight:'20px'}} alt="home icon" />
-                                <Link style={linkStyle} to="/" onClick={() => localStorage.removeItem('isLogged')}>Logout</Link>
+                                <a style={linkStyle} href="/" onClick={() => localStorage.removeItem('isLogged')}>Logout</a>
                                 </div>
                             </div>
                     </nav>
