@@ -44,8 +44,9 @@ code {
 }
 
 .spinner {
+  display: flex;
   position: relative;
-  margin:0 auto
+  margin:20px auto
 }
 
 .spinner::before {

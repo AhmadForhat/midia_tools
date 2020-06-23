@@ -6,6 +6,7 @@ import sendToBackend from './sendToBackend'
 import { Link } from "react-router-dom";
 import Error from '../../components/Error'
 import Cadastrado from '../../components/Cadastrado'
+import Footer from "../../components/Footer"
 
 function Login() {
   const [senha, setSenha] = useState("");
@@ -20,7 +21,8 @@ function Login() {
   if(error) return <Error />
   if(cadastrado) return <Cadastrado />
     return (
-      <div style={{diplay:'flex', width:'30%', minWidth:'250px', margin:'0 auto', boxShadow:'0 2px 4px 1px #B3B3B3', padding:'40px', marginTop:'20px'}}>
+      <>
+      <div style={{diplay:'flex', width:'30%', minWidth:'250px', margin:'0 auto', boxShadow:'0 2px 4px 1px #B3B3B3', padding:'40px', marginTop:'20px', marginBottom:'80px'}}>
         <div style={{display:'flex', justifyContent:'center'}}>
         <img alt ="logo da empresa" src="https://media-exp1.licdn.com/dms/image/C4E0BAQGRxV3kpBUxQw/company-logo_100_100/0?e=1599091200&v=beta&t=lVCgFYTImDC2dNDTdBSV-tpzfcWCkLKlgVrBYr0heJs"/>
         </div>  
@@ -33,6 +35,8 @@ function Login() {
         <Link to="/login" style={{textDecoration:'none', fontSize:'14px', color:'black'}}>Já possuo cadastro!</Link>
         </div>
       </div>
+      <Footer />
+      </>
     )
   }
 

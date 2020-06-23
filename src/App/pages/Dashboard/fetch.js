@@ -8,7 +8,6 @@ const fetch = (state) => {
         const config = {
             method: 'GET',
             url: `https://api.github.com/users/${userName}`,
-            data: { "userName": '' }
         }
         const configRepo = {
             method: 'GET',

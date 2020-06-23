@@ -7,6 +7,7 @@ import Button from '../../components/Button'
 import Input from '../../components/Input'
 import sendToBackend from './sendToBackend'
 import Error from "../../components/Error"
+import Footer from "../../components/Footer"
 
 function Login() {
   const [login, setLogin] = useState("");
@@ -20,6 +21,7 @@ function Login() {
 if(isLogged) return <Logged />
 if(error) return <Error />
     return (
+      <>
       <div style={{diplay:'flex', width:'30%', minWidth:'300px', margin:'0 auto', boxShadow:'0 2px 4px 1px #B3B3B3', padding:'40px', marginTop:'60px'}}>
         <div style={{display:'flex', justifyContent:'center'}}>
         <img alt ="logo da empresa" src="https://media-exp1.licdn.com/dms/image/C4E0BAQGRxV3kpBUxQw/company-logo_100_100/0?e=1599091200&v=beta&t=lVCgFYTImDC2dNDTdBSV-tpzfcWCkLKlgVrBYr0heJs"/>
@@ -41,8 +43,9 @@ if(error) return <Error />
         )
 
         }
-        
       </div>
+      <Footer />
+      </>
     )
   }
 
