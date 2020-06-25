@@ -34,9 +34,6 @@ function Navbar({title}) {
                             </div>
                     </nav>
                 }
-            <div style={{display:'flex', justifyContent:'center'}}>
-                <h2>{title}</h2>
-            </div>
         </>
     )
   }
