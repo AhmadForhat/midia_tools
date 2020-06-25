@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const sendToBackend = (state) => async () => {
-    const {login, senha, setIsLoad} = state
+    const {login, senha, setIsLoad, setError} = state
     const configUserInfo = (gitUser) => {
         return {
             method: 'GET',
@@ -18,10 +18,9 @@ const sendToBackend = (state) => async () => {
     }
     try {
         const logou = await axios(config)
-        if(logou.status === 201 ){
-            console.log(logou)
+        if(logou.status === 201 ){            
             await setIsLoad(true)
-            console.log('Logou com sucesso!!')
+            await setError(false)
             localStorage.setItem('isLogged', true)
             localStorage.setItem('gitUser', logou.data.userGithub)
             const userInfo = await axios(configUserInfo(logou.data.userGithub))
@@ -30,8 +29,9 @@ const sendToBackend = (state) => async () => {
         }else{
             console.log('Não Encontramos seu usuário')
         }
-    } catch (error) {
+    } catch (error) {                
         await setIsLoad(true)
+        await setError(true)
         await setIsLoad(false)
     }
 }
