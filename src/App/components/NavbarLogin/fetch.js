@@ -10,7 +10,7 @@ const fetch = (state) => {
             method: 'GET',
             url: `https://api.github.com/users/${userName}`,
             headers:{
-                Authorization:`token {{gitToken}}`
+                Authorization:`token 2e190bc1e4497052cd82ff44e2a09f414753c686`
             }
         }
         try {

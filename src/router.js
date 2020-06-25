@@ -12,7 +12,6 @@ import Cadastrar from './App/pages/Cadastrar'
 import NotFound from './App/pages/NotFound'
 import Dashboard from './App/pages/Dashboard'
 import Navbar from './App/components/Navbar'
-import NavbarLogin from './App/components/NavbarLogin'
 
 
 

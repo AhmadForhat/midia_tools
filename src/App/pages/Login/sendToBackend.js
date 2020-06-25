@@ -8,7 +8,7 @@ const sendToBackend = (state) => async () => {
             method: 'GET',
             url: `https://api.github.com/users/${gitUser}`,
             headers:{
-                Authorization:`token {{gitToken}}`
+                Authorization:`token 2e190bc1e4497052cd82ff44e2a09f414753c686`
             }
         }
     }

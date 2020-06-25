@@ -37,7 +37,6 @@ function Dashboard() {
         await setLoading(false)
     }
   }
-  
     if(url !== '/') return <RepoDetails repo={url}/>
     if(loading) return <Spinner />
     if(error) return <Error />

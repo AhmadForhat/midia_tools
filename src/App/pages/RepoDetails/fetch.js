@@ -9,7 +9,7 @@ const fetch = (url1, url2, state) => {
             method: 'GET',
             url: url1,
             headers:{
-                Authorization:`token {{gitToken}}`
+                Authorization:`token 2e190bc1e4497052cd82ff44e2a09f414753c686`
             }            
         }
 
@@ -17,7 +17,7 @@ const fetch = (url1, url2, state) => {
             method: 'GET',
             url: url2,
             headers:{
-                Authorization:`token {{gitToken}}`
+                Authorization:`token 2e190bc1e4497052cd82ff44e2a09f414753c686`
             }            
         }        
 

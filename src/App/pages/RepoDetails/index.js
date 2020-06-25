@@ -52,10 +52,10 @@ function RepoDetails({repo}) {
             <h2 style={{margin:"0 auto", marginTop:'30px', marginBottom:'20px'}}>Commits {repo.split('/')[1]}</h2>
             </div>           
             <GraficoPizza dados={arrayGraphic}/>
-            <h2>Contribuidores</h2>
+            <h2 style={{marginLeft:'40px'}}>Contribuidores</h2>
             <CardCommit data={data} />            
 
-        <h2>Comits mais recentes</h2>
+        <h2 style={{marginLeft:'40px'}}>Comits Recentes</h2>
         <div style={{width:'100%', margin:'0 auto', marginTop:'20px', marginBottom:'40px', minWidth:'280px', display:'flex', flexWrap:'wrap'}}>
           <div style={{width:'60%', minWidth:'320px'}}>
             <Input title={'Buscar Dev'} type={'text'} placeholder={'midiaTools'} valor={filterRepo} setValor={setFilterRepo}/>
