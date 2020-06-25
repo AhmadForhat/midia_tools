@@ -1,4 +1,5 @@
 import axios from 'axios'
+require('dotenv').config()
 
 
 const fetch = (state) => {
@@ -7,7 +8,10 @@ const fetch = (state) => {
   const run = async () => {        
         const config = {
             method: 'GET',
-            url: `https://api.github.com/users/${userName}?access_token=c0a5c8dfed1ff82525c1eca44d9fbeb05ed8df2f`,
+            url: `https://api.github.com/users/${userName}`,
+            headers:{
+                Authorization:`token {{gitToken}}`
+            }
         }
         try {
             const result = await axios(config)

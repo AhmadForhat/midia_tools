@@ -1,4 +1,5 @@
 import axios from 'axios'
+require('dotenv').config()
 
 
 const fetch = (url1, url2, state) => { 
@@ -6,12 +7,18 @@ const fetch = (url1, url2, state) => {
   const run = async () => {        
         const config1 = {
             method: 'GET',
-            url: url1,            
+            url: url1,
+            headers:{
+                Authorization:`token {{gitToken}}`
+            }            
         }
 
         const config2 = {
             method: 'GET',
-            url: url2,            
+            url: url2,
+            headers:{
+                Authorization:`token {{gitToken}}`
+            }            
         }        
 
         try {

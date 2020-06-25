@@ -5,7 +5,10 @@ const sendToBackend = (state) => async () => {
     const configUserInfo = (gitUser) => {
         return {
             method: 'GET',
-            url: `https://api.github.com/users/${gitUser}`
+            url: `https://api.github.com/users/${gitUser}`,
+            headers:{
+                Authorization:`token {{gitToken}}`
+            }
         }
     }
     const config = {

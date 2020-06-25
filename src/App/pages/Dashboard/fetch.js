@@ -1,4 +1,5 @@
 import axios from 'axios'
+require('dotenv').config()
 
 
 const fetch = (state) => {
@@ -8,10 +9,16 @@ const fetch = (state) => {
         const config = {
             method: 'GET',
             url: `https://api.github.com/users/${userName}`,
+            headers:{
+                Authorization:`token {{gitToken}}`
+            }
         }
         const configRepo = {
             method: 'GET',
-            url: `https://api.github.com/users/${userName}/repos`
+            url: `https://api.github.com/users/${userName}/repos`,
+            headers:{
+                Authorization:`token {{gitToken}}`
+            }
         }
 
         try {
