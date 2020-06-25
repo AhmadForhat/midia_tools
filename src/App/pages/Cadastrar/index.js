@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Error from '../../components/Error'
 import Cadastrado from '../../components/Cadastrado'
 import Footer from "../../components/Footer"
+import logoMidia from './image/logoMidia.svg'
 
 function Login() {
   const [senha, setSenha] = useState("");
@@ -24,7 +25,7 @@ function Login() {
       <>
       <div style={{diplay:'flex', width:'30%', minWidth:'250px', margin:'0 auto', boxShadow:'0 2px 4px 1px #B3B3B3', padding:'40px', marginTop:'20px', marginBottom:'80px'}}>
         <div style={{display:'flex', justifyContent:'center'}}>
-        <img alt ="logo da empresa" src="https://media-exp1.licdn.com/dms/image/C4E0BAQGRxV3kpBUxQw/company-logo_100_100/0?e=1599091200&v=beta&t=lVCgFYTImDC2dNDTdBSV-tpzfcWCkLKlgVrBYr0heJs"/>
+        <img style={{width:'30%'}} alt ="logo da empresa" src={logoMidia}/>
         </div>  
         <Input title={'CNPJ'} type={'text'} placeholder={'123-4567/88'} valor={cnpj} setValor={setCnpj}/>
         <Input title={'GitHub User'} type={'text'} placeholder={'MidiaTools'} valor={userGit} setValor={setUsergit}/>

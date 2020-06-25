@@ -4,6 +4,7 @@ import Slide from '../../components/Slide'
 import Footer from '../../components/Footer'
 import Card from '../../components/Card'
 import Devs from '../../components/Devs'
+import Header from '../../components/Header'
 import Contato from '../../components/Contato'
 import servicoImg from './image/imgServico.png'
 import missoesImg from './image/imgMissoes.png'
@@ -53,6 +54,7 @@ function Home() {
     ]
     return (
       <>
+        <Header />
         <Slide table={table}/>
         <Devs arrayDevs={arrayDevs} />
         <Contato />
