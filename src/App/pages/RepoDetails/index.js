@@ -49,19 +49,21 @@ function RepoDetails({repo}) {
         <div style={{display:"flex", flexDirection:"column"}}>
             <div style={{display:"flex"}}>
             <Link to="/"><img src={back} alt='voltar' style={{width:'40px', padding:'20px'}}/></Link>
-            <h2 style={{margin:"0 auto", marginTop:'30px', marginBottom:'20px'}}>Últimos 30 commits do repositório {repo.split('/')[1]}</h2>
+            <h2 style={{margin:"0 auto", marginTop:'30px', marginBottom:'20px'}}>Commits {repo.split('/')[1]}</h2>
             </div>           
             <GraficoPizza dados={arrayGraphic}/>
             <h2>Contribuidores</h2>
             <CardCommit data={data} />            
 
         <h2>Comits mais recentes</h2>
-        <div style={{width:'50%', margin:'0 auto', marginBottom:'40px', minWidth:'300px', display:'flex'}}>                   
-          <Input title={'Buscar um usuário'} type={'text'} placeholder={'usuario'} valor={filterRepo} setValor={setFilterRepo}/>
-          <div style={{display:'flex', marginTop:'10px'}}>
+        <div style={{width:'100%', margin:'0 auto', marginTop:'20px', marginBottom:'40px', minWidth:'280px', display:'flex', flexWrap:'wrap'}}>
+          <div style={{width:'60%', minWidth:'320px'}}>
+            <Input title={'Buscar Dev'} type={'text'} placeholder={'midiaTools'} valor={filterRepo} setValor={setFilterRepo}/>
+          </div>
+          <div style={{display:'flex', width:'30%', minWidth:'300px', marginTop:'10px'}}>
           <Button texto={'Buscar'} click={sendToBackend(state)}/>
           <Button texto={'Limpar'} click={voltar(state)}/>
-          </div>
+        </div>
         </div>
         <div style = {{marginBottom:'80px'}}>                
           <Commits dados={dataRepo}/>          

@@ -46,9 +46,11 @@ function Dashboard() {
       <>
         <NavbarLogin title={'Dashboard'} />
         <Grafico dados={graphicParms} />
-        <div style={{width:'50%', margin:'0 auto', marginTop:'20px', marginBottom:'40px', minWidth:'300px', display:'flex'}}>
-          <Input title={'Buscar um repositório'} type={'text'} placeholder={'seu_repo'} valor={filterRepo} setValor={setFilterRepo}/>
-          <div style={{display:'flex', marginTop:'10px'}}>
+        <div style={{width:'100%', margin:'0 auto', marginTop:'20px', marginBottom:'40px', minWidth:'280px', display:'flex', flexWrap:'wrap'}}>
+          <div style={{width:'60%', minWidth:'320px'}}>
+            <Input title={'Buscar um repositório'} type={'text'} placeholder={'seu_repo'} valor={filterRepo} setValor={setFilterRepo}/>
+          </div>
+          <div style={{display:'flex', width:'30%', minWidth:'300px', marginTop:'10px'}}>
           <Button texto={'Buscar'} click={sendToBackend(state)}/>
           <Button texto={'Limpar'} click={voltar(state)}/>
         </div>

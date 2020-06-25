@@ -16,9 +16,9 @@ function Home() {
   const state = {user, info, setUser, setInfo}
     useEffect(() => fetch(state), [state])
     const table = [
-    <Card title='Serviços' img={servicoImg} texto='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' />,
-    <Card title='Missões' img={missoesImg} texto='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' />,
-    <Card title='Equipe' img={equipeImg} texto='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' />
+    <Card title='Serviços' img={servicoImg} texto='Nossos serviços disponibilizam um sistema web para facilitar e dinamizar a utilização e consulta de kpis das redes sociais da sua empresa.' />,
+    <Card title='Missões' img={missoesImg} texto='Nosso maior objetivo é criar uma rede de parceiros para assim nos desenvolvermos juntos e crescermos nossas empresa da melhor maneira possível.' />,
+    <Card title='Equipe' img={equipeImg} texto='Nossa equipe é formada por vários devs, todos extremamente qualificados para sempre dar suporte e ajudar com qualquer questão ou dúvida que tenham.' />
   ]
     const arrayDevs = [
       {
