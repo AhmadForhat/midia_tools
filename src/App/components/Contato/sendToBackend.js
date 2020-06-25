@@ -11,6 +11,7 @@ const sendToBackend = (state) => async () => {
     }
     console.log(config.data)
     try {
+        await setErrorNews(false)
         await setLoading(true)
         await axios(config)      
         await setNews(true)
