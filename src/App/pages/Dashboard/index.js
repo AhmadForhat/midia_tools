@@ -23,7 +23,21 @@ function Dashboard() {
   const [error, setError] = useState(false)
   const [data, setData] = useState('')
   const state = {data, graphicParms, repos, loading, error,reposFilter,filterRepo, setData, setGraphicParms, setRepos, setLoading, setError,setReposFilter}
+  
   useEffect(() => fetch(state),[])
+
+  const voltar = (state) => async () => {
+    const {setLoading, setReposFilter} = state
+    try {         
+            await setLoading(true)
+            await setFilterRepo('')
+            await setReposFilter([])
+            await setLoading(false)          
+    } catch (error) {
+        await setLoading(false)
+    }
+  }
+  
     if(url !== '/') return <RepoDetails repo={url}/>
     if(loading) return <Spinner />
     if(error) return <Error />
@@ -32,9 +46,12 @@ function Dashboard() {
       <>
         <NavbarLogin title={'Dashboard'} />
         <Grafico dados={graphicParms} />
-        <div style={{width:'50%', margin:'0 auto', marginBottom:'40px', minWidth:'300px'}}>
-          <Input title={'Busca'} type={'text'} placeholder={'seu_repo'} valor={filterRepo} setValor={setFilterRepo}/>
+        <div style={{width:'50%', margin:'0 auto', marginTop:'20px', marginBottom:'40px', minWidth:'300px', display:'flex'}}>
+          <Input title={'Buscar um repositório'} type={'text'} placeholder={'seu_repo'} valor={filterRepo} setValor={setFilterRepo}/>
+          <div style={{display:'flex', marginTop:'10px'}}>
           <Button texto={'Buscar'} click={sendToBackend(state)}/>
+          <Button texto={'Limpar'} click={voltar(state)}/>
+        </div>
         </div>
         <box style = {{display: 'flex', width: '95%', flexWrap: 'wrap', margin: '0 auto', marginBottom:'80px'}}>
           {
