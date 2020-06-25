@@ -6,6 +6,7 @@ import {container, linkStyle} from './style'
 import exitIcon from './image/clear-24px.svg'
 import homeIcon from './image/home-24px.svg'
 import loginIcon from './image/login-24px.svg'
+import newIcon from './image/new-24px.svg'
 
 function Navbar({title}) {
     const [hamburger, setHamburger] = useState('false')
@@ -25,6 +26,10 @@ function Navbar({title}) {
                                 <div style={{margin:'0 auto', display:'flex', justifyContent:'center', marginTop:'60px'}}>
                                 <img src={loginIcon} style={{marginRight:'20px'}} alt="home icon" />
                                 <Link style={linkStyle} to="/login">Login</Link>
+                                </div>
+                                <div style={{margin:'0 auto', display:'flex', justifyContent:'center', marginTop:'60px'}}>
+                                <img src={newIcon} style={{marginRight:'20px'}} alt="home icon" />
+                                <Link style={linkStyle} to="/cadastrar">Cadastro</Link>
                                 </div>
                             </div>
                     </nav>
