@@ -5,6 +5,7 @@ import Logged from '../../components/Logged'
 import Spinner from '../../components/Spinner'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
+import Footer from '../../components/Footer'
 import sendToBackend from './sendToBackend'
 import logoMidia from './image/logoMidia.svg'
 
@@ -19,6 +20,7 @@ function Login() {
 
 if(isLogged) return <Logged />
     return (
+      <>
       <div style={{diplay:'flex', width:'30%', minWidth:'300px', margin:'0 auto', boxShadow:'0 2px 4px 1px #B3B3B3', padding:'40px', marginTop:'60px'}}>
         <div style={{display:'flex', justifyContent:'center'}}>
         <img alt ="logo da empresa" style={{width:'30%'}} src={logoMidia}/>
@@ -49,8 +51,9 @@ if(isLogged) return <Logged />
           </div>
         )
         }      
-        
       </div>
+      <Footer />
+      </>
     )
   }
 
