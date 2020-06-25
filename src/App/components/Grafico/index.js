@@ -1,19 +1,32 @@
 import React from "react";
-import { Chart } from 'react-charts'
+import CanvasJSReact from './canvasjs.react'
+
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 
-function Grafico({dados}) {
-    const data = [{label: 'Geral',data: dados}]
-    const series ={type: 'bar'}
-    const axes =[{ primary: true, type: 'ordinal', position: 'left' },{ position: 'bottom', type: 'linear', stacked: true }]
+function Grafico({dados}) { 
     
-     return(
-        <>
-          <div style={{width: '85%',height: '350px', margin: '0 auto', marginBottom: '40px'}}>
-            <Chart data={data} series={series} axes={axes} />
+        const options = { 
+          axisY: {gridThickness:0}, 
+          backgroundColor: "#F7F7F7",             
+          data: [{				
+                    type: "bar",
+                    dataPoints: [
+                        { label: dados[0][0],  y:dados[0][1] },
+                        { label: dados[1][0],  y:dados[1][1] },
+                        { label: dados[2][0],  y:dados[2][1] },
+                        { label: dados[3][0],  y:dados[3][1] },
+                    ]
+           }]
+          }
+      
+        
+       return (
+          <div style={{width:'85%', margin:'0 auto'}}>
+            <CanvasJSChart options = {options} />
           </div>
-        </>
-     )
-  }
+        );
+      }
+  
 
 export default Grafico
