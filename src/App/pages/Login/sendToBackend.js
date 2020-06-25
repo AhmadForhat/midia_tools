@@ -1,4 +1,5 @@
 import axios from 'axios'
+require('dotenv').config()
 
 const sendToBackend = (state) => async () => {
     const {login, senha, setIsLoad, setError} = state
@@ -20,9 +21,9 @@ const sendToBackend = (state) => async () => {
         }
     }
     try {
+        await setIsLoad(true)
         const logou = await axios(config)
         if(logou.status === 201 ){            
-            await setIsLoad(true)
             await setError(false)
             localStorage.setItem('isLogged', true)
             localStorage.setItem('gitUser', logou.data.userGithub)
@@ -33,7 +34,6 @@ const sendToBackend = (state) => async () => {
             console.log('Não Encontramos seu usuário')
         }
     } catch (error) {                
-        await setIsLoad(true)
         await setError(true)
         await setIsLoad(false)
     }
